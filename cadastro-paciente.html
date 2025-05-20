@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Paciente - Model Life</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.6.0/cleave.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar" role="navigation" aria-label="Menu principal">
+            <a href="index.html" class="logo">
+                <img src="logopainelmodel.png" alt="Model Life Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="agendamento.html">Agendamento</a></li>
+                <li><a href="login.html" class="admin-link">Área Administrativa</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Cadastro de Paciente</h1>
+            <p>Preencha o formulário abaixo para realizar seu cadastro</p>
+        </section>
+
+        <section class="services">
+            <div class="form-container fade-in">
+                <form id="cadastroPacienteForm" novalidate>
+                    <h2>Dados Pessoais</h2>
+                    <div class="form-group">
+                        <label for="nome">Nome Completo *</label>
+                        <input type="text" id="nome" name="nome" required minlength="3" pattern="[A-Za-zÀ-ÿ\s]+" title="Digite seu nome completo usando apenas letras">
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="dataNascimento">Data de Nascimento *</label>
+                        <input type="date" id="dataNascimento" name="dataNascimento" required>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="cpf">CPF *</label>
+                        <input type="text" id="cpf" name="cpf" required>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="rg">RG *</label>
+                        <input type="text" id="rg" name="rg" required>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone *</label>
+                        <input type="tel" id="telefone" name="telefone" required>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <h2>Endereço</h2>
+                    <div class="form-group">
+                        <label for="cep">CEP *</label>
+                        <input type="text" id="cep" name="cep" required>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="endereco">Endereço *</label>
+                        <input type="text" id="endereco" name="endereco" required readonly>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="numero">Número *</label>
+                        <input type="text" id="numero" name="numero" required>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="complemento">Complemento</label>
+                        <input type="text" id="complemento" name="complemento">
+                    </div>
+                    <div class="form-group">
+                        <label for="bairro">Bairro *</label>
+                        <input type="text" id="bairro" name="bairro" required readonly>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="cidade">Cidade *</label>
+                        <input type="text" id="cidade" name="cidade" required readonly>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="estado">Estado *</label>
+                        <select id="estado" name="estado" required>
+                            <option value="">Selecione um estado</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <h2>Informações de Saúde</h2>
+                    <div class="form-group">
+                        <label for="planoSaude">Plano de Saúde</label>
+                        <input type="text" id="planoSaude" name="planoSaude">
+                    </div>
+                    <div class="form-group">
+                        <label for="numeroPlano">Número do Plano</label>
+                        <input type="text" id="numeroPlano" name="numeroPlano">
+                    </div>
+                    <div class="form-group">
+                        <label for="alergias">Alergias</label>
+                        <textarea id="alergias" name="alergias" rows="3" placeholder="Informe suas alergias, se houver"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="medicamentos">Medicamentos em Uso</label>
+                        <textarea id="medicamentos" name="medicamentos" rows="3" placeholder="Informe os medicamentos que está utilizando"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="observacoes">Observações Gerais</label>
+                        <textarea id="observacoes" name="observacoes" rows="4" placeholder="Informe observações relevantes sobre sua saúde"></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn">Cadastrar Paciente</button>
+                        <button type="reset" class="btn btn-secondary">Limpar Formulário</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Model Life. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            new Cleave('#cpf', {
+                delimiters: ['.', '.', '-'],
+                blocks: [3, 3, 3, 2],
+                numericOnly: true
+            });
+
+            new Cleave('#telefone', {
+                delimiters: ['(', ')', ' ', '-'],
+                blocks: [0, 2, 5, 4],
+                numericOnly: true
+            });
+
+            new Cleave('#cep', {
+                delimiters: ['-'],
+                blocks: [5, 3],
+                numericOnly: true
+            });
+
+            const cepInput = document.getElementById('cep');
+            cepInput.addEventListener('blur', function() {
+                const cep = this.value.replace(/\D/g, '');
+                if (cep.length === 8) {
+                    fetch(`https://viacep.com.br/ws/${cep}/json/`)
+                        .then(response => response.json())
+                        .then(data => {
+                            if (!data.erro) {
+                                document.getElementById('endereco').value = data.logradouro;
+                                document.getElementById('bairro').value = data.bairro;
+                                document.getElementById('cidade').value = data.localidade;
+                                document.getElementById('estado').value = data.uf;
+                            }
+                        })
+                        .catch(error => console.error('Erro ao buscar CEP:', error));
+                }
+            });
+
+            const form = document.getElementById('cadastroPacienteForm');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                if (form.checkValidity()) {
+                    alert('Formulário enviado com sucesso!');
+                    form.reset();
+                } else {
+                    const invalidFields = form.querySelectorAll(':invalid');
+                    invalidFields.forEach(field => {
+                        const errorMessage = field.nextElementSibling;
+                        if (errorMessage && errorMessage.classList.contains('error-message')) {
+                            errorMessage.textContent = field.validationMessage;
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

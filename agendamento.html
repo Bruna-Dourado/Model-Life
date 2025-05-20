@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Life - Agendamento</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="logopainelmodel.png" alt="Model Life Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="agendamento.html">Agendamento</a></li>
+                <li><a href="cadastro-paciente.html">Cadastro de Pacientes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Agendamento de Consultas</h1>
+            <p>Agende sua consulta de forma rápida e fácil</p>
+        </section>
+
+        <section class="agendamento-section">
+            <form id="agendamentoForm" class="agendamento-form">
+                <h2>Dados do Paciente</h2>
+                
+                <div class="form-group">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" name="nome" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" id="telefone" name="telefone" class="form-control" required>
+                </div>
+
+                <h2>Detalhes da Consulta</h2>
+
+                <div class="form-group">
+                    <label for="servico">Serviço</label>
+                    <select id="servico" name="servico" class="form-control" required>
+                        <option value="">Selecione um serviço</option>
+                        <option value="Psicologia">Psicologia</option>
+                        <option value="Terapia Ocupacional">Terapia Ocupacional</option>
+                        <option value="Fonoaudiologia">Fonoaudiologia</option>
+                        <option value="Apoio Educacional">Apoio Educacional</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="profissional">Profissional</label>
+                    <select id="profissional" name="profissional" class="form-control" required>
+                        <option value="">Selecione um profissional</option>
+                        <!-- Preenchido via JavaScript -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="data">Data Preferida</label>
+                    <input type="date" id="data" name="data" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="horario">Horário Preferido</label>
+                    <select id="horario" name="horario" class="form-control" required>
+                        <option value="">Selecione um horário</option>
+                        <option value="08:00">08:00</option>
+                        <option value="09:00">09:00</option>
+                        <option value="10:00">10:00</option>
+                        <option value="11:00">11:00</option>
+                        <option value="14:00">14:00</option>
+                        <option value="15:00">15:00</option>
+                        <option value="16:00">16:00</option>
+                        <option value="17:00">17:00</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="tipoConsulta">Tipo de Consulta</label>
+                    <select id="tipoConsulta" name="tipoConsulta" class="form-control" required>
+                        <option value="">Selecione o tipo de consulta</option>
+                        <option value="Primeira Consulta">Primeira Consulta</option>
+                        <option value="Retorno">Retorno</option>
+                        <option value="Avaliação">Avaliação</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="observacoes">Observações</label>
+                    <textarea id="observacoes" name="observacoes" class="form-control" rows="4"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Agendar Consulta</button>
+            </form>
+
+            <div class="agendamentos-list">
+                <h2>Meus Agendamentos</h2>
+                <div class="table-container">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Horário</th>
+                                <th>Serviço</th>
+                                <th>Profissional</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="listaAgendamentos">
+                            <!-- Preenchido via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Model Life. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
